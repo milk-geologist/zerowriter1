@@ -393,6 +393,7 @@ class ZeroWriter:
                 self.previous_lines.clear()
                 for graf in lines:
                     for line in self.text_wrapper.wrap(graf):
+                        line += " " #making sure words don't get stuck together after loading and then saving.
                         self.previous_lines.append(line)
                     last_line=self.previous_lines.pop().strip("\n")
                     last_line += "\n"
